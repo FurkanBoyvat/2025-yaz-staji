@@ -459,7 +459,7 @@
     }
     
     .text-shadow-strong {
-      text-shadow: 0 4px 8px rgba(255, 196, 0, 0.8), 0 0 20px rgba(255, 255, 255, 0.3);
+      text-shadow: 0 4px 8px rgba(238,201,0 0.8), 0 0 20px rgba(255, 0, 0, 0.3);
     }
     
     @keyframes loadingPulse {
@@ -897,40 +897,47 @@
 
     // Dinamik fotoğraf yükleme sistemi
     async function loadImages() {
-      // Bilinen dosya isimleri listesi
-      const knownFiles = [
-        // JPG dosyaları
-        'foto1.jpg', 'foto2.jpg', 'foto3.jpg', 'foto4.jpg', 'foto5.jpg', 'foto6.jpg', 'foto7.jpg', 'foto8.jpg', 'foto9.jpg', 'foto10.jpg',
-        'foto11.jpg', 'foto12.jpg', 'foto13.jpg', 'foto14.jpg', 'foto15.jpg', 'foto16.jpg', 'foto17.jpg', 'foto18.jpg', 'foto19.jpg', 'foto20.jpg',
-        'foto21.jpg', 'foto22.jpg', 'foto23.jpg', 'foto24.jpg', 'foto25.jpg', 'foto26.jpg', 'foto27.jpg', 'foto28.jpg', 'foto29.jpg', 'foto30.jpg',
-        'foto31.jpg', 'foto32.jpg', 'foto33.jpg', 'foto34.jpg', 'foto35.jpg', 'foto36.jpg', 'foto37.jpg', 'foto38.jpg', 'foto39.jpg', 'foto40.jpg',
-        'foto41.jpg', 'foto42.jpg', 'foto43.jpg', 'foto44.jpg', 'foto45.jpg', 'foto46.jpg', 'foto47.jpg', 'foto48.jpg', 'foto49.jpg', 'foto50.jpg',
-        
-        // PNG dosyaları
-        'foto1.png', 'foto2.png', 'foto3.png', 'foto4.png', 'foto5.png', 'foto6.png', 'foto7.png', 'foto8.png', 'foto9.png', 'foto10.png',
-        'foto11.png', 'foto12.png', 'foto13.png', 'foto14.png', 'foto15.png', 'foto16.png', 'foto17.png', 'foto18.png', 'foto19.png', 'foto20.png',
-        'foto21.png', 'foto22.png', 'foto23.png', 'foto24.png', 'foto25.png', 'foto26.png', 'foto27.png', 'foto28.png', 'foto29.png', 'foto30.png',
-        'foto31.png', 'foto32.png', 'foto33.png', 'foto34.png', 'foto35.png', 'foto36.png', 'foto37.png', 'foto38.png', 'foto39.png', 'foto40.png',
-        'foto41.png', 'foto42.png', 'foto43.png', 'foto44.png', 'foto45.png', 'foto46.png', 'foto47.png', 'foto48.png', 'foto49.png', 'foto50.png',
-        
-        // Diğer dosyalar
-        'image.png', 'image7.png', 'image8.png',
-        '474198428-f83a59f8-7285-4a32-89c6-d391722858b7.png',
-        '474198371-ff8f6e09-ed82-4ac0-93cc-63b63846c939.png',
-        '474198278-336746ae-e4d7-439d-85ca-954fafdefde8.png',
-        '474198240-7a044b98-bd6c-4916-95d9-6e4015997d08-1.png',
-        '474198063-9a592d86-d2a8-4afd-876b-db6717c015d1.png',
-        '474197971-76816a79-ef7d-42a2-a955-305bfa35f8e1.png',
-        '474197901-ac4bd9f9-0c07-4d4f-9366-a40cf87ad828.png',
-        '474197809-7d59c19a-7dd2-4d23-84f5-0164782146db.png',
-        '474197736-639e4728-da0b-46e6-8873-9326feed8744.png',
-        '474204821-ccb71d8b-8fe9-49b6-a734-c68668a9f600.png',
-        '474204131-b7689bd3-65d3-45ed-a1fc-1e031484897f.png',
-        '474204209-831ed56a-29d4-479c-a818-0469bed4260f.png',
-        '474193494-3f7eb362-9584-428a-981b-44d46a4d451c.png',
-        '474193453-77b44d80-9966-4a32-88f3-25a6ee83775b.png',
-        '474193160-89e1bd59-e0b9-45d4-9fe5-9d2b1baafea6.png'
-      ];
+       // Bilinen dosya isimleri listesi
+       const knownFiles = [
+         // JPG dosyaları
+         'foto1.jpg', 'foto2.jpg', 'foto3.jpg', 'foto4.jpg', 'foto5.jpg', 'foto6.jpg', 'foto7.jpg', 'foto8.jpg', 'foto9.jpg', 'foto10.jpg',
+         'foto11.jpg', 'foto12.jpg', 'foto13.jpg', 'foto14.jpg', 'foto15.jpg', 'foto16.jpg', 'foto17.jpg', 'foto18.jpg', 'foto19.jpg', 'foto20.jpg',
+         'foto21.jpg', 'foto22.jpg', 'foto23.jpg', 'foto24.jpg', 'foto25.jpg', 'foto26.jpg', 'foto27.jpg', 'foto28.jpg', 'foto29.jpg', 'foto30.jpg',
+         'foto31.jpg', 'foto32.jpg', 'foto33.jpg', 'foto34.jpg', 'foto35.jpg', 'foto36.jpg', 'foto37.jpg', 'foto38.jpg', 'foto39.jpg', 'foto40.jpg',
+         'foto41.jpg', 'foto42.jpg', 'foto43.jpg', 'foto44.jpg', 'foto45.jpg', 'foto46.jpg', 'foto47.jpg', 'foto48.jpg', 'foto49.jpg', 'foto50.jpg',
+         
+         // JPEG dosyaları
+         'foto1.jpeg', 'foto2.jpeg', 'foto3.jpeg', 'foto4.jpeg', 'foto5.jpeg', 'foto6.jpeg', 'foto7.jpeg', 'foto8.jpeg', 'foto9.jpeg', 'foto10.jpeg',
+         'foto11.jpeg', 'foto12.jpeg', 'foto13.jpeg', 'foto14.jpeg', 'foto15.jpeg', 'foto16.jpeg', 'foto17.jpeg', 'foto18.jpeg', 'foto19.jpeg', 'foto20.jpeg',
+         'foto21.jpeg', 'foto22.jpeg', 'foto23.jpeg', 'foto24.jpeg', 'foto25.jpeg', 'foto26.jpeg', 'foto27.jpeg', 'foto28.jpeg', 'foto29.jpeg', 'foto30.jpeg',
+         'foto31.jpeg', 'foto32.jpeg', 'foto33.jpeg', 'foto34.jpeg', 'foto35.jpeg', 'foto36.jpeg', 'foto37.jpeg', 'foto38.jpeg', 'foto39.jpeg', 'foto40.jpeg',
+         'foto41.jpeg', 'foto42.jpeg', 'foto43.jpeg', 'foto44.jpeg', 'foto45.jpeg', 'foto46.jpeg', 'foto47.jpeg', 'foto48.jpeg', 'foto49.jpeg', 'foto50.jpeg',
+         
+         // PNG dosyaları
+         'foto1.png', 'foto2.png', 'foto3.png', 'foto4.png', 'foto5.png', 'foto6.png', 'foto7.png', 'foto8.png', 'foto9.png', 'foto10.png',
+         'foto11.png', 'foto12.png', 'foto13.png', 'foto14.png', 'foto15.png', 'foto16.png', 'foto17.png', 'foto18.png', 'foto19.png', 'foto20.png',
+         'foto21.png', 'foto22.png', 'foto23.png', 'foto24.png', 'foto25.png', 'foto26.png', 'foto27.png', 'foto28.png', 'foto29.png', 'foto30.png',
+         'foto31.png', 'foto32.png', 'foto33.png', 'foto34.png', 'foto35.png', 'foto36.png', 'foto37.png', 'foto38.png', 'foto39.png', 'foto40.png',
+         'foto41.png', 'foto42.png', 'foto43.png', 'foto44.png', 'foto45.png', 'foto46.png', 'foto47.png', 'foto48.png', 'foto49.png', 'foto50.png',
+         
+         // Diğer dosyalar
+         'image.png', 'image7.png', 'image8.png',
+         '474198428-f83a59f8-7285-4a32-89c6-d391722858b7.png',
+         '474198371-ff8f6e09-ed82-4ac0-93cc-63b63846c939.png',
+         '474198278-336746ae-e4d7-439d-85ca-954fafdefde8.png',
+         '474198240-7a044b98-bd6c-4916-95d9-6e4015997d08-1.png',
+         '474198063-9a592d86-d2a8-4afd-876b-db6717c015d1.png',
+         '474197971-76816a79-ef7d-42a2-a955-305bfa35f8e1.png',
+         '474197901-ac4bd9f9-0c07-4d4f-9366-a40cf87ad828.png',
+         '474197809-7d59c19a-7dd2-4d23-84f5-0164782146db.png',
+         '474197736-639e4728-da0b-46e6-8873-9326feed8744.png',
+         '474204821-ccb71d8b-8fe9-49b6-a734-c68668a9f600.png',
+         '474204131-b7689bd3-65d3-45ed-a1fc-1e031484897f.png',
+         '474204209-831ed56a-29d4-479c-a818-0469bed4260f.png',
+         '474193494-3f7eb362-9584-428a-981b-44d46a4d451c.png',
+         '474193453-77b44d80-9966-4a32-88f3-25a6ee83775b.png',
+         '474193160-89e1bd59-e0b9-45d4-9fe5-9d2b1baafea6.png'
+       ];
 
       let loadedCount = 0;
       const validFiles = [];
@@ -969,14 +976,14 @@
         createPhotoCard(filename, index);
       });
 
-      // Eğer hiç dosya bulunamazsa, test dosyaları ekle
-      if (validFiles.length === 0) {
-        console.log('Hiç dosya bulunamadı, test dosyaları ekleniyor...');
-        const testFiles = ['foto1.jpg', 'foto2.jpg', 'foto3.jpg', 'foto1.png', 'foto2.png', 'foto3.png'];
-        testFiles.forEach((filename, index) => {
-          createPhotoCard(filename, index);
-        });
-      }
+       // Eğer hiç dosya bulunamazsa, test dosyaları ekle
+       if (validFiles.length === 0) {
+         console.log('Hiç dosya bulunamadı, test dosyaları ekleniyor...');
+         const testFiles = ['foto1.jpg', 'foto2.jpg', 'foto3.jpg', 'foto1.jpeg', 'foto2.jpeg', 'foto3.jpeg', 'foto1.png', 'foto2.png', 'foto3.png'];
+         testFiles.forEach((filename, index) => {
+           createPhotoCard(filename, index);
+         });
+       }
     }
 
     // Fotoğraf kartı oluşturma fonksiyonu
